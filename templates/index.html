@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Design</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .bg {
+            background-image: url('https://th.bing.com/th/id/R.8c436a877ff7afda6a73ee3036762161?rik=MbYDiwHwgQHslw&riu=http%3a%2f%2fimg-new.cgtrader.com%2fitems%2f145323%2frealistic_interior_design_273_3d_model_02760379-7570-4088-8764-f2ebed4775aa.jpg&ehk=rM9xnhwtX9%2fEKZLWHc58bHI7rjF0uH1pcbMCCQ9TlFc%3d&risl=&pid=ImgRaw&r=0');
+            height: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+        }
+        .bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .navbar-custom {
+            background-color: transparent;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: none; /* Remove border */
+        }
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0; /* Start hidden */
+            animation: fadeIn 2s forwards; /* Animation to make it visible */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            opacity: 0; /* Start hidden */
+            animation: fadeInHeading 2s forwards; /* Animation for heading */
+        }
+        @keyframes fadeInHeading {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .container p {
+            font-size: 1.2em;
+            opacity: 0; /* Start hidden */
+            animation: fadeInParagraph 2s 1s forwards; /* Animation for paragraph with delay */
+        }
+        @keyframes fadeInParagraph {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .btn-custom {
+            margin: 10px;
+            border: none; /* Remove border */
+            color: white;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-custom:hover, .btn-custom:focus {
+            background-color: white;
+            color: black;
+            border: none; /* Ensure no border on hover/focus */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-group .btn-custom {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+            <a class="navbar-brand text-white" href="http://127.0.0.1:5000/home">Interior Design</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/signup">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/contact">Contact Us</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/hall">Hall</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/dinning">Dining</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/kitchen">Kitchen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-custom" href="http://127.0.0.1:5000/backyard">Backyard</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>Welcome to Our Interior Design Website</h1>
+            <p>Explore different sections of our interior design projects:</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

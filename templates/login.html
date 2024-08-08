@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            display: block; /* Make sure the form is visible */
+            max-width: 500px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="form-container" id="loginForm">
+            <h3 class="text-center">Login</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email address</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="button" class="btn btn-link mt-2" id="signupButton">New user? Sign up here</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#loginForm').on('submit', function(event) {
+                event.preventDefault();
+                var email = $('#loginEmail').val();
+                var password = $('#loginPassword').val();
+
+                $.ajax({
+                    url: '/login',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ username: email, password: password }),
+                    success: function(response) {
+                        alert('Login successful');
+                        // Redirect to home page
+                        window.location.href = '/home'; // Adjust the URL as needed
+                    },
+                    error: function(response) {
+                        alert('Login failed: ' + response.responseJSON.message);
+                    }
+                });
+            });
+
+            $('#signupButton').on('click', function() {
+                window.location.href = '/signup'; // Adjust the URL as needed
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+#home-bg {
+    height: 100vh; /* Adjust as needed */
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    position: relative; /* Ensure it is properly positioned */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+
